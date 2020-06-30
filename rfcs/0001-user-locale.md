@@ -57,10 +57,6 @@ Blessing Skin 的页面中提供了一个下拉菜单，该菜单用于更改页
 
 若用户已登录，并且其 `locale` 有具体的值，则应该以此 `locale` 为准。即，再次调用 `app()->setLocale()` 来覆盖之前设置过的值。
 
-### 关于原来的 `locale` Cookie
-
-此前，`locale` Cookie 的作用是为了记住用户选择了哪种语言。但现在有了持久化的记录方法，这个 Cookie 可以考虑被删除，并进而将原来的 `App\Http\Middlewares\EncryptCookies` 中间件替换为 Laravel 自带的 `Illuminate\Cookie\Middleware\EncryptCookies` 中间件。
-
 ### 应用用户所设置的语言
 
 这一部分是针对 API 和邮件、通知的发送的。关于 UI 部分，前面已提到过。
@@ -93,9 +89,7 @@ trans('xxx', [], $user->locale);
 
 ## 缺点
 
-### 删除 `locale` Cookie
-
-在移除 `locale` Cookie 之后，未登录的用户就算通过页面右上角的下拉菜单切换语言也不会被记录。因此在访问下一页面时，刚刚的切换将会失效。
+暂无。
 
 ## 备选方案
 
@@ -118,4 +112,12 @@ trans('xxx', [], $user->locale);
 
 ## 其它
 
-无。
+### 允许更改 fallback locale
+
+我们可以考虑允许 fallback locale 被自定义：在 `.env` 文件中添加一条 `APP_FALLBACK_LOCALE` 配置项。
+
+### 重构「临时性的语言设置存储」
+
+这里主要是针对未登录的用户的。因为用户没有登录，所以不可能更改 users 表。但对于这一类用户，他们也有可能会切换语言。目前的做法是使用一项未加密的名为 `locale` 的 Cookie。
+
+我们也许可以重构这一部分功能，使其通过 Session 来现实。这样也就可以将原来的 `App\Http\Middlewares\EncryptCookies` 中间件替换为 Laravel 自带的 `Illuminate\Cookie\Middleware\EncryptCookies` 中间件。
