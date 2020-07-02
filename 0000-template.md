@@ -1,7 +1,8 @@
 - 仓库：blessing-skin-server
 - 日期: YYYY-MM-DD
-- RFC PR: [#0000](https://github.com/bs-community/rfcs/pull/0) <!-- 可先不填，待发起 PR 后再补充 -->
 - 作者：[Name](https://github.com/name)
+- RFC PR: [#0000](https://github.com/bs-community/rfcs/pull/0) <!-- 可先不填，待发起 PR 后再补充 -->
+- 实现 PR: [blessing-skin-server#0](https://github.com/bs-community/blessing-skin-server/pull/0) <!-- 可先不填，待发起 PR 后再补充 -->
 
 # （标题）
 
