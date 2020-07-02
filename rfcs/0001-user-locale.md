@@ -1,7 +1,8 @@
 - 仓库：blessing-skin-server
 - 日期: 2020-06-29
-- RFC PR: [#0001](https://github.com/bs-community/rfcs/pull/1)
 - 作者：[Pig Fang](https://github.com/g-plane)
+- RFC PR: [#0001](https://github.com/bs-community/rfcs/pull/1)
+- 实现 PR：[blessing-skin-server#190](https://github.com/bs-community/blessing-skin-server/pull/190)
 
 # 基于用户的语言设置
 
