@@ -22,9 +22,9 @@
 
 ### 数据库
 
-新增一个 textures_desc 表用于存储相关信息。表中有两个字段 `tid` 和 `desc`，数据类型分别为 `unsigned int` 和 `varchar`，分别用于记录材质的 TID 和材质描述文本。可以直接使用 `tid` 作为主键，因为 TID 是唯一的。
+新增一个 textures_desc 表用于存储相关信息。表中有三个字段 `id`、 `tid` 和 `desc`，数据类型分别为 `unsigned int`、 `unsigned int` 和 `varchar`，其中 `id` 字段作为主键，`tid` 和 `desc` 字段用于记录材质的 TID 和材质描述文本。
 
-同时，在 options 表中增加一条 `textures_desc_limit`，数据类型为 `unsigned int`，用于存储下方提到的「字数限制」的值。
+同时，在 options 表中增加一条 `textures_desc_limit` 记录，用于存储下方提到的「字数限制」的值。
 
 可以仅在用户有填写材质描述时才在数据表中创建相关记录。
 
@@ -42,11 +42,11 @@
 
 可以在材质详情页中的材质预览的下方、评论区（如果有）的上方增加一个 `card-secondary` 来展示。当材质描述不存在时，不应该展示材质描述。
 
-应该支持渲染 Markdown。同时，为了防止 XSS 攻击，应该转义 HTML 标签。
+应该支持解析 Markdown。可以使用 [thephpleague/commonmark](https://github.com/thephpleague/commonmark) 来解析 GitHub Flavored Markdown，且将 `html_input` 参数和 `allow_unsafe_links` 参数的值分别设为 `strip` 和 `false`，以防范 XSS 攻击。
 
 ## 缺点
 
-因为要转义 HTML 标签，材质描述在排版上可能会显得更单调。
+暂无。
 
 ## 备选方案
 
@@ -68,4 +68,4 @@
 
 ## 其它
 
-暂无。
+感谢 Pig Fang（[@g-plane](https://github.com/g-plane)）提出的建议。
