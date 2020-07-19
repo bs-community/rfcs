@@ -32,7 +32,7 @@
 
 在「上传材质」页面中，左侧「选择文件」和「内容政策」的中间增加一个文本框（`textarea`），供用户填写材质描述。
 
-材质成功发布后，应该允许用户修改材质描述。可以在材质详情页右侧的「更多操作」部分新增一个「修改描述」的 `btn-info`，用户点击后弹出一个 modal 来修改。
+材质成功发布后，应该允许用户修改材质描述。可以在 `card-header` 标题中加一个「编辑」符号（`fa-edit`，就像管理员访问用户中心仪表盘时的「站点公告」部分那样），用户点击后 `card-body` 中原先的内容变为 `textarea` 来让用户修改；若该材质不存在描述，则在 `card-body` 中展示一个「添加描述」按钮。（可以参考 [这个](https://codepen.io/mochaa/pen/BajqMvQ)）
 
 ### 材质描述的字数限制
 
@@ -40,9 +40,9 @@
 
 ### 材质描述的展示
 
-可以在材质详情页中的材质预览的下方、评论区（如果有）的上方增加一个 `card-secondary` 来展示。当材质描述不存在时，不应该展示材质描述。
+可以在材质详情页中的材质预览的下方、评论区（如果有）的上方增加一个 `card-secondary` 来展示。当材质描述不存在时，除非当前用户为该材质的上传者或管理员，否则不应该展示材质描述。
 
-应该支持解析 Markdown。可以使用 [thephpleague/commonmark](https://github.com/thephpleague/commonmark) 来解析 GitHub Flavored Markdown，且将 `html_input` 参数和 `allow_unsafe_links` 参数的值分别设为 `strip` 和 `false`，以防范 XSS 攻击。
+应该支持解析 Markdown。可以使用 [thephpleague/commonmark](https://github.com/thephpleague/commonmark) 开启 GFM 扩展来解析 GitHub Flavored Markdown。
 
 ## 缺点
 
@@ -68,4 +68,4 @@
 
 ## 其它
 
-感谢 Pig Fang（[@g-plane](https://github.com/g-plane)）提出的建议。
+感谢 Pig Fang（[@g-plane](https://github.com/g-plane)）和 [@mochaaP](https://github.com/mochaaP) 提出的建议。
