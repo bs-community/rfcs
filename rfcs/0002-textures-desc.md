@@ -33,7 +33,7 @@
 #### 获取材质描述
 
 ```
-GET /skinlib/desc/{tid}
+GET /textures/{tid}/desc
 ```
 
 无请求体，不要求用户登录。
@@ -47,7 +47,7 @@ GET /skinlib/desc/{tid}
 #### 更新材质描述
 
 ```
-PUT /skinlib/desc/{tid}
+PUT /textures/{tid}/desc
 ```
 
 请求体内容为材质描述文本，应仅允许用户在登录后请求此 API。
