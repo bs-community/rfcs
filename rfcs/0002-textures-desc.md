@@ -2,7 +2,7 @@
 - 日期: 2020-07-17
 - 作者：[Steven Qiu](https://github.com/tnqzh123)
 - RFC PR：[#0002](https://github.com/bs-community/rfcs/pull/2)
-- 实现 PR：暂无
+- 实现 PR：[blessing-skin-plugins#73](https://github.com/bs-community/blessing-skin-plugins/pull/73)
 
 # 材质详情中的材质描述
 
