@@ -64,7 +64,9 @@ PUT /textures/{tid}/desc
 
 在「上传材质」页面中，左侧「选择文件」和「内容政策」的中间增加一个文本框（`textarea`），供用户填写材质描述。
 
-材质成功发布后，应该允许用户修改材质描述。可以在 `card-header` 标题中加一个「编辑」符号（`fa-edit`，就像管理员访问用户中心仪表盘时的「站点公告」部分那样），用户点击后 `card-body` 中原先的内容变为 `textarea` 来让用户修改；若该材质不存在描述，则在 `card-body` 中展示一个「添加描述」按钮。（可以参考 [这个](https://codepen.io/mochaa/pen/BajqMvQ)）
+材质成功发布后，应该允许用户修改材质描述。可以在 `card-header` 标题中加一个「编辑」符号（`fa-edit`，就像管理员访问用户中心仪表盘时的「站点公告」部分那样），用户点击后 `card-body` 中原先的内容变为 `textarea` 来让用户修改；若该材质不存在描述，则在 `card-body` 中展示一个「添加描述」按钮（可以参考 [这个](https://codepen.io/mochaa/pen/BajqMvQ)）。
+
+材质描述更新后，由后端渲染 Markdown，再发回前端展示。
 
 ### 材质描述的字数限制
 
