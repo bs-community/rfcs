@@ -22,9 +22,9 @@
 
 ### 数据库
 
-新增一个 textures_desc 表用于存储相关信息。表中有三个字段 `id`、 `tid` 和 `desc`，数据类型分别为 `unsigned int`、 `unsigned int` 和 `varchar`，其中 `id` 字段作为主键，`tid` 和 `desc` 字段用于记录材质的 TID 和材质描述文本。
+新增一个 textures_description 表用于存储相关信息。表中有三个字段 `id`、 `tid` 和 `description`，数据类型分别为 `unsigned int`、 `unsigned int` 和 `varchar`，其中 `id` 字段作为主键，`tid` 和 `description` 字段用于记录材质的 TID 和材质描述文本。
 
-同时，在 options 表中增加一条 `textures_desc_limit` 记录，用于存储下方提到的「字数限制」的值。
+同时，在 options 表中增加一条 `textures_description_limit` 记录，用于存储下方提到的「字数限制」的值。
 
 可以仅在用户有填写材质描述时才在数据表中创建相关记录。
 
@@ -37,13 +37,13 @@
 ##### 内部使用
 
 ```
-GET /texture/{tid}/desc
+GET /texture/{tid}/description
 ```
 
 ##### 外部使用
 
 ```
-GET /api/textures/{tid}/desc
+GET /api/textures/{tid}/description
 ```
 
 ##### 参数
@@ -65,13 +65,13 @@ GET /api/textures/{tid}/desc
 ##### 内部使用
 
 ```
-PUT /texture/{tid}/desc
+PUT /texture/{tid}/description
 ```
 
 ##### 外部使用
 
 ```
-PUT /api/textures/{tid}/desc
+PUT /api/textures/{tid}/description
 ```
 
 ##### 参数
@@ -114,7 +114,7 @@ PUT /api/textures/{tid}/desc
 
 除了通过插件实现外，还可以考虑直接整合进 BS 核心。
 
-整合进核心的方案与通过插件实现的方案的差异主要体现在数据库上。如果整合进核心，则可以直接在 textures 表中增加一个 `desc` 字段，数据类型为 `varchar`，用于存储材质描述文本，而不需要单独开数据表。其它部分与用插件实现的方案相同。
+整合进核心的方案与通过插件实现的方案的差异主要体现在数据库上。如果整合进核心，则可以直接在 textures 表中增加一个 `description` 字段，数据类型为 `varchar`，用于存储材质描述文本，而不需要单独开数据表。其它部分与用插件实现的方案相同。
 
 ## FAQ
 
