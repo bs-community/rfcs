@@ -1,7 +1,7 @@
 - 仓库：blessing-skin-server
 - 日期：2021-04-15
 - 作者：[Asnxthaony](https://github.com/Asnxthaony)
-- RFC PR: [#0003](https://github.com/bs-community/rfcs/pull/6)
+- RFC PR: [#0003](https://github.com/bs-community/rfcs/pull/7)
 - 实现 PR: [blessing-skin-server#287](https://github.com/bs-community/blessing-skin-server/pull/287)
 
 # 令牌授权范围
